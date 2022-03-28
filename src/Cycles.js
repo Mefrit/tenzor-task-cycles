@@ -33,14 +33,15 @@ export function iterationCount(a) {
   и верните итоговый результат.
 */
 export function symbolsReplace(message) {
-    let i = 0,
-        out_str = '';
+    let i = 1,
+        out_str = message[0];
     do {
-        if (i % 3 == 0) {
+        if ((i + 1) % 3 === 0 && i > 1) {
             out_str += '_';
         } else {
             out_str += message[i];
         }
-    } while (i < message.length - 1);
+        i++;
+    } while (i < message.length);
     return out_str;
 }
